@@ -15,6 +15,8 @@
 		E0679DF428ACF1AC00D56296 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E0679DF328ACF1AC00D56296 /* .gitignore */; };
 		E0679DF628ACF1C100D56296 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E0679DF528ACF1C100D56296 /* README.md */; };
 		E0679DFC28ACF37500D56296 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E0679DFB28ACF37500D56296 /* LICENSE */; };
+		E0679DFF28ACF4EC00D56296 /* Mapbox in Frameworks */ = {isa = PBXBuildFile; productRef = E0679DFE28ACF4EC00D56296 /* Mapbox */; };
+		E0679E0228ACF50200D56296 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E0679E0128ACF50200D56296 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0679E0228ACF50200D56296 /* SDWebImageSwiftUI in Frameworks */,
+				E0679DFF28ACF4EC00D56296 /* Mapbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +158,10 @@
 			dependencies = (
 			);
 			name = WeMapTechnicalTest;
+			packageProductDependencies = (
+				E0679DFE28ACF4EC00D56296 /* Mapbox */,
+				E0679E0128ACF50200D56296 /* SDWebImageSwiftUI */,
+			);
 			productName = WeMapTechnicalTest;
 			productReference = E0679DC628ACF18A00D56296 /* WeMapTechnicalTest.app */;
 			productType = "com.apple.product-type.application";
@@ -204,6 +212,10 @@
 				Base,
 			);
 			mainGroup = E0679DBD28ACF18A00D56296;
+			packageReferences = (
+				E0679DFD28ACF4EC00D56296 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */,
+				E0679E0028ACF50200D56296 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = E0679DC728ACF18A00D56296 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -508,6 +520,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0679DFD28ACF4EC00D56296 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maplibre/maplibre-gl-native-distribution";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		E0679E0028ACF50200D56296 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E0679DFE28ACF4EC00D56296 /* Mapbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0679DFD28ACF4EC00D56296 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */;
+			productName = Mapbox;
+		};
+		E0679E0128ACF50200D56296 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0679E0028ACF50200D56296 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E0679DBE28ACF18A00D56296 /* Project object */;
 }
