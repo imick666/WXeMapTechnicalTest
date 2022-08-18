@@ -17,6 +17,8 @@
 		E0679DFC28ACF37500D56296 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E0679DFB28ACF37500D56296 /* LICENSE */; };
 		E0679DFF28ACF4EC00D56296 /* Mapbox in Frameworks */ = {isa = PBXBuildFile; productRef = E0679DFE28ACF4EC00D56296 /* Mapbox */; };
 		E0679E0228ACF50200D56296 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E0679E0128ACF50200D56296 /* SDWebImageSwiftUI */; };
+		E0679E0428ACF5CF00D56296 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679E0328ACF5CF00D56296 /* MapView.swift */; };
+		E0679E0628ACF67400D56296 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679E0528ACF67400D56296 /* Credential.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		E0679DF328ACF1AC00D56296 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E0679DF528ACF1C100D56296 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E0679DFB28ACF37500D56296 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E0679E0328ACF5CF00D56296 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		E0679E0528ACF67400D56296 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +90,9 @@
 		E0679DC828ACF18A00D56296 /* WeMapTechnicalTest */ = {
 			isa = PBXGroup;
 			children = (
+				E0679DF828ACF26700D56296 /* Model */,
 				E0679DFA28ACF27500D56296 /* ViewModel */,
 				E0679DF928ACF26F00D56296 /* View */,
-				E0679DF828ACF26700D56296 /* Model */,
 				E0679DF728ACF25A00D56296 /* SupportingFiles */,
 				E0679DCD28ACF18B00D56296 /* Assets.xcassets */,
 				E0679DCF28ACF18B00D56296 /* Preview Content */,
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				E0679DC928ACF18A00D56296 /* WeMapTechnicalTestApp.swift */,
+				E0679E0528ACF67400D56296 /* Credential.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E0679DCB28ACF18A00D56296 /* ContentView.swift */,
+				E0679E0328ACF5CF00D56296 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0679DCC28ACF18A00D56296 /* ContentView.swift in Sources */,
+				E0679E0428ACF5CF00D56296 /* MapView.swift in Sources */,
+				E0679E0628ACF67400D56296 /* Credential.swift in Sources */,
 				E0679DCA28ACF18A00D56296 /* WeMapTechnicalTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +410,7 @@
 				DEVELOPMENT_TEAM = V6M3YC3LQG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -431,6 +440,7 @@
 				DEVELOPMENT_TEAM = V6M3YC3LQG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
