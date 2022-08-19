@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E010E50C28AFB7B500E16DF8 /* WeMapServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E50B28AFB7B500E16DF8 /* WeMapServiceTests.swift */; };
+		E010E51028AFB91200E16DF8 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E50F28AFB91200E16DF8 /* FakeData.swift */; };
+		E010E51228AFBB1600E16DF8 /* WeMapResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = E010E51128AFB9BE00E16DF8 /* WeMapResponse.json */; };
 		E0679DCA28ACF18A00D56296 /* WeMapTechnicalTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679DC928ACF18A00D56296 /* WeMapTechnicalTestApp.swift */; };
 		E0679DCC28ACF18A00D56296 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679DCB28ACF18A00D56296 /* ContentView.swift */; };
 		E0679DCE28ACF18B00D56296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0679DCD28ACF18B00D56296 /* Assets.xcassets */; };
 		E0679DD128ACF18B00D56296 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0679DD028ACF18B00D56296 /* Preview Assets.xcassets */; };
-		E0679DDB28ACF18B00D56296 /* WeMapTechnicalTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679DDA28ACF18B00D56296 /* WeMapTechnicalTestTests.swift */; };
 		E0679DF428ACF1AC00D56296 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E0679DF328ACF1AC00D56296 /* .gitignore */; };
 		E0679DF628ACF1C100D56296 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E0679DF528ACF1C100D56296 /* README.md */; };
 		E0679DFC28ACF37500D56296 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E0679DFB28ACF37500D56296 /* LICENSE */; };
@@ -19,6 +21,15 @@
 		E0679E0228ACF50200D56296 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E0679E0128ACF50200D56296 /* SDWebImageSwiftUI */; };
 		E0679E0428ACF5CF00D56296 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679E0328ACF5CF00D56296 /* MapView.swift */; };
 		E0679E0628ACF67400D56296 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679E0528ACF67400D56296 /* Credential.swift */; };
+		E0FF056928AE6CCB0085FCBC /* WeMapReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF056828AE6CCB0085FCBC /* WeMapReponse.swift */; };
+		E0FF057128AE6ED10085FCBC /* WeMapResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF057028AE6ED10085FCBC /* WeMapResponseTests.swift */; };
+		E0FF057428AE76210085FCBC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF057328AE76210085FCBC /* NetworkService.swift */; };
+		E0FF057B28AE77C70085FCBC /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF057A28AE77C70085FCBC /* NetworkServiceMock.swift */; };
+		E0FF057D28AE7E6A0085FCBC /* PNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF057C28AE7E6A0085FCBC /* PNetworkService.swift */; };
+		E0FF058028AE7E980085FCBC /* WeMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF057F28AE7E980085FCBC /* WeMapService.swift */; };
+		E0FF058228AE7EE20085FCBC /* Poi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF058128AE7EE20085FCBC /* Poi.swift */; };
+		E0FF058428AE90930085FCBC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF058328AE90930085FCBC /* NetworkClient.swift */; };
+		E0FF058728AE93B50085FCBC /* WMNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF058628AE93B50085FCBC /* WMNetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,18 +43,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E010E50B28AFB7B500E16DF8 /* WeMapServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapServiceTests.swift; sourceTree = "<group>"; };
+		E010E50F28AFB91200E16DF8 /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
+		E010E51128AFB9BE00E16DF8 /* WeMapResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeMapResponse.json; sourceTree = "<group>"; };
 		E0679DC628ACF18A00D56296 /* WeMapTechnicalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeMapTechnicalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0679DC928ACF18A00D56296 /* WeMapTechnicalTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapTechnicalTestApp.swift; sourceTree = "<group>"; };
 		E0679DCB28ACF18A00D56296 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E0679DCD28ACF18B00D56296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0679DD028ACF18B00D56296 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E0679DD628ACF18B00D56296 /* WeMapTechnicalTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeMapTechnicalTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0679DDA28ACF18B00D56296 /* WeMapTechnicalTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapTechnicalTestTests.swift; sourceTree = "<group>"; };
 		E0679DF328ACF1AC00D56296 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E0679DF528ACF1C100D56296 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E0679DFB28ACF37500D56296 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E0679E0328ACF5CF00D56296 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E0679E0528ACF67400D56296 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		E0FF056828AE6CCB0085FCBC /* WeMapReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapReponse.swift; sourceTree = "<group>"; };
+		E0FF057028AE6ED10085FCBC /* WeMapResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapResponseTests.swift; sourceTree = "<group>"; };
+		E0FF057328AE76210085FCBC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E0FF057A28AE77C70085FCBC /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		E0FF057C28AE7E6A0085FCBC /* PNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNetworkService.swift; sourceTree = "<group>"; };
+		E0FF057F28AE7E980085FCBC /* WeMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapService.swift; sourceTree = "<group>"; };
+		E0FF058128AE7EE20085FCBC /* Poi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poi.swift; sourceTree = "<group>"; };
+		E0FF058328AE90930085FCBC /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		E0FF058628AE93B50085FCBC /* WMNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMNetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +88,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E010E50A28AFB79A00E16DF8 /* WeMapService */ = {
+			isa = PBXGroup;
+			children = (
+				E010E50B28AFB7B500E16DF8 /* WeMapServiceTests.swift */,
+			);
+			path = WeMapService;
+			sourceTree = "<group>";
+		};
+		E010E50D28AFB8F700E16DF8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF056728AE6CAC0085FCBC /* WeMapResponses */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E010E50E28AFB90800E16DF8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E010E50F28AFB91200E16DF8 /* FakeData.swift */,
+				E010E51128AFB9BE00E16DF8 /* WeMapResponse.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E0679DBD28ACF18A00D56296 = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +158,9 @@
 		E0679DD928ACF18B00D56296 /* WeMapTechnicalTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				E0679DDA28ACF18B00D56296 /* WeMapTechnicalTestTests.swift */,
+				E0FF056C28AE6E4D0085FCBC /* Mocks */,
+				E0FF056B28AE6E440085FCBC /* Extensions */,
+				E0FF056A28AE6E3D0085FCBC /* Model */,
 			);
 			path = WeMapTechnicalTestTests;
 			sourceTree = "<group>";
@@ -128,6 +177,10 @@
 		E0679DF828ACF26700D56296 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E010E50D28AFB8F700E16DF8 /* Data */,
+				E0FF058528AE93AC0085FCBC /* Error */,
+				E0FF057E28AE7E870085FCBC /* WeMapService */,
+				E0FF057228AE72250085FCBC /* Network */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +199,98 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0FF056728AE6CAC0085FCBC /* WeMapResponses */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF056828AE6CCB0085FCBC /* WeMapReponse.swift */,
+				E0FF058128AE7EE20085FCBC /* Poi.swift */,
+			);
+			path = WeMapResponses;
+			sourceTree = "<group>";
+		};
+		E0FF056A28AE6E3D0085FCBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF057528AE772B0085FCBC /* Network */,
+				E0FF056D28AE6E530085FCBC /* WeMapResponses */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E0FF056B28AE6E440085FCBC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E0FF056C28AE6E4D0085FCBC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF057828AE773F0085FCBC /* Model */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E0FF056D28AE6E530085FCBC /* WeMapResponses */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF057028AE6ED10085FCBC /* WeMapResponseTests.swift */,
+			);
+			path = WeMapResponses;
+			sourceTree = "<group>";
+		};
+		E0FF057228AE72250085FCBC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF057C28AE7E6A0085FCBC /* PNetworkService.swift */,
+				E0FF057328AE76210085FCBC /* NetworkService.swift */,
+				E0FF058328AE90930085FCBC /* NetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E0FF057528AE772B0085FCBC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E010E50A28AFB79A00E16DF8 /* WeMapService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E0FF057828AE773F0085FCBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E010E50E28AFB90800E16DF8 /* Data */,
+				E0FF057928AE77BA0085FCBC /* network */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E0FF057928AE77BA0085FCBC /* network */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF057A28AE77C70085FCBC /* NetworkServiceMock.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		E0FF057E28AE7E870085FCBC /* WeMapService */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF057F28AE7E980085FCBC /* WeMapService.swift */,
+			);
+			path = WeMapService;
+			sourceTree = "<group>";
+		};
+		E0FF058528AE93AC0085FCBC /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF058628AE93B50085FCBC /* WMNetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +350,7 @@
 					};
 					E0679DD528ACF18B00D56296 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = E0679DC528ACF18A00D56296;
 					};
 				};
@@ -249,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E010E51228AFBB1600E16DF8 /* WeMapResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,10 +406,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0FF058028AE7E980085FCBC /* WeMapService.swift in Sources */,
+				E0FF058428AE90930085FCBC /* NetworkClient.swift in Sources */,
 				E0679DCC28ACF18A00D56296 /* ContentView.swift in Sources */,
 				E0679E0428ACF5CF00D56296 /* MapView.swift in Sources */,
+				E0FF058228AE7EE20085FCBC /* Poi.swift in Sources */,
 				E0679E0628ACF67400D56296 /* Credential.swift in Sources */,
 				E0679DCA28ACF18A00D56296 /* WeMapTechnicalTestApp.swift in Sources */,
+				E0FF057428AE76210085FCBC /* NetworkService.swift in Sources */,
+				E0FF058728AE93B50085FCBC /* WMNetworkError.swift in Sources */,
+				E0FF056928AE6CCB0085FCBC /* WeMapReponse.swift in Sources */,
+				E0FF057D28AE7E6A0085FCBC /* PNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +424,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0679DDB28ACF18B00D56296 /* WeMapTechnicalTestTests.swift in Sources */,
+				E0FF057128AE6ED10085FCBC /* WeMapResponseTests.swift in Sources */,
+				E0FF057B28AE77C70085FCBC /* NetworkServiceMock.swift in Sources */,
+				E010E51028AFB91200E16DF8 /* FakeData.swift in Sources */,
+				E010E50C28AFB7B500E16DF8 /* WeMapServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,15 +621,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V6M3YC3LQG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickaelruzel.WeMapTechnicalTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeMapTechnicalTest.app/WeMapTechnicalTest";
@@ -484,11 +648,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V6M3YC3LQG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickaelruzel.WeMapTechnicalTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

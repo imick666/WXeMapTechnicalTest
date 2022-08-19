@@ -11,8 +11,6 @@ import CoreLocation
 
 struct MapView: UIViewRepresentable {
     
-    
-    
     func makeUIView(context: Context) -> MGLMapView {
         print("Loading")
         let styleUrl = URL(string: "https://api.maptiler.com/maps/streets/style.json?key=\(Credential.mapTileKey.rawValue)")!
@@ -31,6 +29,10 @@ struct MapView: UIViewRepresentable {
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
+    }
+    
+    func test() -> MapView {
+        return self
     }
     
     final class Coordinator: NSObject, MGLMapViewDelegate {
