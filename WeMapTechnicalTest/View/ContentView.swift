@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var viewModel = ContentViewViewModel()
+    
     var body: some View {
-        MapView()
-            .test()
+        ZStack {
+            MapView(viewModel: viewModel.mapViewViewModel)
+                .edgesIgnoringSafeArea(.bottom)
+            
+            VStack {
+                Spacer()
+                
+                Button {
+                    viewModel.fetchPoi()
+                } label: {
+                    Text("Fetch Pois")
+                }
+
+            }
+        }
+        
     }
 }
 
