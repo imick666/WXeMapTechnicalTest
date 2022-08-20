@@ -10,6 +10,10 @@
 		E010E50C28AFB7B500E16DF8 /* WeMapServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E50B28AFB7B500E16DF8 /* WeMapServiceTests.swift */; };
 		E010E51028AFB91200E16DF8 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E50F28AFB91200E16DF8 /* FakeData.swift */; };
 		E010E51228AFBB1600E16DF8 /* WeMapResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = E010E51128AFB9BE00E16DF8 /* WeMapResponse.json */; };
+		E010E51428AFC93200E16DF8 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E51328AFC93100E16DF8 /* ContentViewViewModel.swift */; };
+		E010E51B28B10F2B00E16DF8 /* MapViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E51A28B10F2B00E16DF8 /* MapViewViewModel.swift */; };
+		E010E51D28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E51C28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift */; };
+		E01615E028B15F7800510EF0 /* Sequence+MGLPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01615DF28B15F7800510EF0 /* Sequence+MGLPointAnnotation.swift */; };
 		E0679DCA28ACF18A00D56296 /* WeMapTechnicalTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679DC928ACF18A00D56296 /* WeMapTechnicalTestApp.swift */; };
 		E0679DCC28ACF18A00D56296 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679DCB28ACF18A00D56296 /* ContentView.swift */; };
 		E0679DCE28ACF18B00D56296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0679DCD28ACF18B00D56296 /* Assets.xcassets */; };
@@ -46,6 +50,10 @@
 		E010E50B28AFB7B500E16DF8 /* WeMapServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapServiceTests.swift; sourceTree = "<group>"; };
 		E010E50F28AFB91200E16DF8 /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 		E010E51128AFB9BE00E16DF8 /* WeMapResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeMapResponse.json; sourceTree = "<group>"; };
+		E010E51328AFC93100E16DF8 /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
+		E010E51A28B10F2B00E16DF8 /* MapViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewModel.swift; sourceTree = "<group>"; };
+		E010E51C28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
+		E01615DF28B15F7800510EF0 /* Sequence+MGLPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+MGLPointAnnotation.swift"; sourceTree = "<group>"; };
 		E0679DC628ACF18A00D56296 /* WeMapTechnicalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeMapTechnicalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0679DC928ACF18A00D56296 /* WeMapTechnicalTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapTechnicalTestApp.swift; sourceTree = "<group>"; };
 		E0679DCB28ACF18A00D56296 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +121,31 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		E010E51528AFD0E800E16DF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E01615DC28B15E2100510EF0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E010E51C28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift */,
+				E01615DF28B15F7800510EF0 /* Sequence+MGLPointAnnotation.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E01615E128B1652F00510EF0 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF056A28AE6E3D0085FCBC /* Model */,
+				E010E51528AFD0E800E16DF8 /* ViewModel */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		E0679DBD28ACF18A00D56296 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +170,7 @@
 		E0679DC828ACF18A00D56296 /* WeMapTechnicalTest */ = {
 			isa = PBXGroup;
 			children = (
+				E01615DC28B15E2100510EF0 /* Extension */,
 				E0679DF828ACF26700D56296 /* Model */,
 				E0679DFA28ACF27500D56296 /* ViewModel */,
 				E0679DF928ACF26F00D56296 /* View */,
@@ -158,9 +192,9 @@
 		E0679DD928ACF18B00D56296 /* WeMapTechnicalTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				E01615E128B1652F00510EF0 /* Tests */,
 				E0FF056C28AE6E4D0085FCBC /* Mocks */,
 				E0FF056B28AE6E440085FCBC /* Extensions */,
-				E0FF056A28AE6E3D0085FCBC /* Model */,
 			);
 			path = WeMapTechnicalTestTests;
 			sourceTree = "<group>";
@@ -197,6 +231,8 @@
 		E0679DFA28ACF27500D56296 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E010E51328AFC93100E16DF8 /* ContentViewViewModel.swift */,
+				E010E51A28B10F2B00E16DF8 /* MapViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -408,6 +444,7 @@
 			files = (
 				E0FF058028AE7E980085FCBC /* WeMapService.swift in Sources */,
 				E0FF058428AE90930085FCBC /* NetworkClient.swift in Sources */,
+				E010E51B28B10F2B00E16DF8 /* MapViewViewModel.swift in Sources */,
 				E0679DCC28ACF18A00D56296 /* ContentView.swift in Sources */,
 				E0679E0428ACF5CF00D56296 /* MapView.swift in Sources */,
 				E0FF058228AE7EE20085FCBC /* Poi.swift in Sources */,
@@ -417,6 +454,9 @@
 				E0FF058728AE93B50085FCBC /* WMNetworkError.swift in Sources */,
 				E0FF056928AE6CCB0085FCBC /* WeMapReponse.swift in Sources */,
 				E0FF057D28AE7E6A0085FCBC /* PNetworkService.swift in Sources */,
+				E010E51D28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
+				E01615E028B15F7800510EF0 /* Sequence+MGLPointAnnotation.swift in Sources */,
+				E010E51428AFC93200E16DF8 /* ContentViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
