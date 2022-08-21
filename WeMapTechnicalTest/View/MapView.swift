@@ -25,18 +25,14 @@ struct MapView: UIViewRepresentable {
         view.showsScale = true
         view.scaleBarUsesMetricSystem = true
         
+        
         view.delegate = context.coordinator
         
         return view
     }
     
     func updateUIView(_ uiView: MGLMapView, context: Context) {
-        uiView.addAnnotations(viewModel.annotations)
-        
-        let camera = MGLMapCamera(lookingAtCenter: viewModel.annotations.centerCoordinate, acrossDistance: viewModel.annotations.maxDistance, pitch: 15, heading: 0)
-        
-        uiView.setCamera(camera, withDuration: 4, animationTimingFunction: nil)
-        
+        updateAnnotations(for: uiView)
     }
     
     func makeCoordinator() -> Coordinator {
@@ -44,6 +40,22 @@ struct MapView: UIViewRepresentable {
     }
     
     // MARK: - Methodes
+    
+    private func annotationHasChanged(for mapView: MGLMapView) -> Bool {
+        switch mapView.annotations {
+        case .none: return true
+        case .some(let annotations): return annotations != viewModel.annotations
+        }
+    }
+    
+    private func updateAnnotations(for mapView: MGLMapView) {
+        guard annotationHasChanged(for: mapView) else { return }
+        
+        mapView.addAnnotations(viewModel.annotations)
+        
+        let camera = MGLMapCamera(lookingAtCenter: viewModel.annotations.centerCoordinate, acrossDistance: viewModel.annotations.maxDistance, pitch: 0, heading: 0)
+        mapView.setCamera(camera, withDuration: 2, animationTimingFunction: nil)
+    }
     
     // MARK: - Coordinator
     
@@ -60,7 +72,5 @@ struct MapView: UIViewRepresentable {
                 mapView.setCenter(location, zoomLevel: 4, animated: true)
             }
         }
-        
-        
     }
 }

@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import Mapbox.MGLPointAnnotation
 
 struct ContentView: View {
     
     @StateObject private var viewModel = ContentViewViewModel()
+    @State var selectedAnnotation: MGLPointAnnotation? = nil
+    
     
     var body: some View {
         ZStack {
             MapView(viewModel: viewModel.mapViewViewModel)
-                .edgesIgnoringSafeArea(.bottom)
+                
             
             VStack {
                 Spacer()
@@ -27,7 +30,6 @@ struct ContentView: View {
 
             }
         }
-        
     }
 }
 

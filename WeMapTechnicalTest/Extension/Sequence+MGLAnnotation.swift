@@ -8,7 +8,7 @@
 import Foundation
 import Mapbox.MGLPointAnnotation
 
-extension Sequence where Element == MGLPointAnnotation {
+extension Sequence where Element: MGLAnnotation {
     
     /// Return the center coordinate of all elements.
     var centerCoordinate: CLLocationCoordinate2D {
@@ -47,4 +47,20 @@ extension Sequence where Element == MGLPointAnnotation {
         return point1.distance(from: point2) * 3.28
     }
     
+}
+
+extension Sequence where Element: MGLAnnotation {
+
+
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.minLongitude == rhs.minLongitude &&
+        lhs.minLattitude == rhs.minLattitude
+        
+    }
+
+    static func != (lhs: Self, rhs: Self) -> Bool {
+
+        return lhs.minLattitude != rhs.minLattitude &&
+        lhs.minLongitude != rhs.minLongitude
+    }
 }
