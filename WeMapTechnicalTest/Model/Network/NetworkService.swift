@@ -11,7 +11,7 @@ import Combine
 final class NetworkService: PNetowrkService {
     func fetchData(from url: URL) -> AnyPublisher<(data: Data, response: URLResponse), URLError> {
         URLSession.shared.dataTaskPublisher(for: url)
-            .receive(on: DispatchQueue.main)
+//            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }

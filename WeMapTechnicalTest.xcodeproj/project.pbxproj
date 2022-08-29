@@ -14,6 +14,7 @@
 		E010E51B28B10F2B00E16DF8 /* MapViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E51A28B10F2B00E16DF8 /* MapViewViewModel.swift */; };
 		E010E51D28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010E51C28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift */; };
 		E01615E028B15F7800510EF0 /* Sequence+MGLAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01615DF28B15F7800510EF0 /* Sequence+MGLAnnotation.swift */; };
+		E016984428B9504900E41B8E /* PoiCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E016984328B9504900E41B8E /* PoiCalloutView.swift */; };
 		E0679DCA28ACF18A00D56296 /* WeMapTechnicalTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679DC928ACF18A00D56296 /* WeMapTechnicalTestApp.swift */; };
 		E0679DCC28ACF18A00D56296 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679DCB28ACF18A00D56296 /* ContentView.swift */; };
 		E0679DCE28ACF18B00D56296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0679DCD28ACF18B00D56296 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		E010E51A28B10F2B00E16DF8 /* MapViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewModel.swift; sourceTree = "<group>"; };
 		E010E51C28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 		E01615DF28B15F7800510EF0 /* Sequence+MGLAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+MGLAnnotation.swift"; sourceTree = "<group>"; };
+		E016984328B9504900E41B8E /* PoiCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiCalloutView.swift; sourceTree = "<group>"; };
 		E0679DC628ACF18A00D56296 /* WeMapTechnicalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeMapTechnicalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0679DC928ACF18A00D56296 /* WeMapTechnicalTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapTechnicalTestApp.swift; sourceTree = "<group>"; };
 		E0679DCB28ACF18A00D56296 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				E0679DCB28ACF18A00D56296 /* ContentView.swift */,
 				E0679E0328ACF5CF00D56296 /* MapView.swift */,
+				E016984328B9504900E41B8E /* PoiCalloutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				E010E51D28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				E01615E028B15F7800510EF0 /* Sequence+MGLAnnotation.swift in Sources */,
 				E010E51428AFC93200E16DF8 /* ContentViewViewModel.swift in Sources */,
+				E016984428B9504900E41B8E /* PoiCalloutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

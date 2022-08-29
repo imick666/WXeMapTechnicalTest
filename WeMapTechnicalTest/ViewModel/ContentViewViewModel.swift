@@ -29,6 +29,7 @@ final class ContentViewViewModel: ObservableObject {
     
     func fetchPoi() {
         weMapService.fetchPois(for: searchTerms)
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .finished: return

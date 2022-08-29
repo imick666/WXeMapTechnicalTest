@@ -25,7 +25,6 @@ struct MapView: UIViewRepresentable {
         view.showsScale = true
         view.scaleBarUsesMetricSystem = true
         
-        
         view.delegate = context.coordinator
         
         return view
@@ -55,6 +54,7 @@ struct MapView: UIViewRepresentable {
         
         let camera = MGLMapCamera(lookingAtCenter: viewModel.annotations.centerCoordinate, acrossDistance: viewModel.annotations.maxDistance, pitch: 0, heading: 0)
         mapView.setCamera(camera, withDuration: 2, animationTimingFunction: nil)
+        
     }
     
     // MARK: - Coordinator
@@ -72,5 +72,16 @@ struct MapView: UIViewRepresentable {
                 mapView.setCenter(location, zoomLevel: 4, animated: true)
             }
         }
+        
+        func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+            return true
+        }
+        
+        func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
+            let view = PoiCalloutView(annotation: annotation)
+            
+            return view
+        }
+        
     }
 }
