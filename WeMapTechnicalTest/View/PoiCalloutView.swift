@@ -36,13 +36,14 @@ final class PoiCalloutView: UIView, MGLCalloutView {
     
     init(annotation: Poi) {
         self.representedObject = annotation
+        
+        super.init(frame: .zero)
+        
         nameLabel.text = annotation.title
         descriptionTextView.text = annotation.poiDescription
         adressLabel.text = annotation.address
-        
+
         imageView.sd_setImage(with: annotation.mediaUrl, placeholderImage: UIImage(named: "placeholder"))
-        
-        super.init(frame: .zero)
     }
     
     required init?(coder: NSCoder) {
@@ -50,22 +51,6 @@ final class PoiCalloutView: UIView, MGLCalloutView {
     }
     
     // MARK: - Subviews
-    
-    private var nameLabel: UILabel = {
-       let view = UILabel()
-        view.backgroundColor = .white.withAlphaComponent(0.5)
-        view.textColor = .black
-        view.layer.cornerRadius = 10
-        view.textAlignment = .left
-        view.adjustsFontSizeToFitWidth = true
-        view.minimumScaleFactor = 0.2
-        view.numberOfLines = 2
-        view.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
     
     private var headerView: UIView = {
        let view = UIView()
@@ -88,16 +73,49 @@ final class PoiCalloutView: UIView, MGLCalloutView {
         return view
     }()
     
+    private var nameLabel: UILabel = {
+       let view = UILabel()
+        view.textColor = .black
+        view.textAlignment = .left
+        view.adjustsFontSizeToFitWidth = true
+        view.minimumScaleFactor = 0.2
+        view.numberOfLines = 2
+        view.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
+    private var nameLabelView: UIView = {
+       let view = UIView()
+        view.backgroundColor = .white.withAlphaComponent(0.5)
+        view.layer.cornerRadius = 10
+        
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private var adressLabel: UILabel = {
        let view = UILabel()
         view.textAlignment = .right
         view.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        view.backgroundColor = .white.withAlphaComponent(0.5)
         view.textColor = .black
         view.numberOfLines = 0
         
         view.translatesAutoresizingMaskIntoConstraints = false
         
+        return view
+    }()
+    
+    private var addressLabelView: UIView = {
+       let view = UIView()
+        view.backgroundColor = .white.withAlphaComponent(0.5)
+        view.layer.cornerRadius = 10
+        
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -129,7 +147,21 @@ final class PoiCalloutView: UIView, MGLCalloutView {
     func presentCallout(from rect: CGRect, in view: UIView, constrainedTo constrainedRect: CGRect, animated: Bool) {
         
         let width = constrainedRect.width * 0.8
-        createView(from: rect, withWidthOf: width)
+        let mainStackView = setupMainStackView(withWidthOf: width)
+        
+        let height = mainStackView.systemLayoutSizeFitting(.zero).height
+        let xPoint = rect.midX - (width / 2)
+        let yPoint = rect.minY - height
+        self.frame = CGRect(x: xPoint, y: yPoint, width: width, height: height)
+        
+        self.addSubview(mainStackView)
+        
+        NSLayoutConstraint.activate([
+            mainStackView.topAnchor.constraint(equalTo: self.topAnchor),
+            mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            mainStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+        ])
         
         view.addSubview(self)
         
@@ -139,37 +171,34 @@ final class PoiCalloutView: UIView, MGLCalloutView {
         removeFromSuperview()
     }
     
-    private func createView(from pointViewRect: CGRect, withWidthOf width: CGFloat) {
+    // MARK: - Subviews Setup
+    
+    private func setupMainStackView(withWidthOf width: CGFloat) -> UIView {
         
-        mainStackView.addArrangedSubview(setupHeader())
-        mainStackView.addArrangedSubview(setupDescriptionView())
+        let mainStackView = mainStackView
+        let headerView = setupHeader()
+        let descriptionView = setupDescriptionView()
         
-        self.addSubview(mainStackView)
+        mainStackView.addArrangedSubview(headerView)
+        mainStackView.addArrangedSubview(descriptionView)
         
         NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: mainStackView.topAnchor),
-            self.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
-            self.bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor),
-            self.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
             mainStackView.widthAnchor.constraint(equalToConstant: width)
         ])
         
-        let height = mainStackView.systemLayoutSizeFitting(.zero).height
-        let yPoint = pointViewRect.minY - height
-        let xPoint = pointViewRect.midX - (width / 2)
-        
-        self.frame = CGRect(x: xPoint, y: yPoint, width: width, height: height)
+        return mainStackView
     }
-    
-    
-    
-    // MARK: - Subviews Setup
     
     private func setupHeader() -> UIView {
         
+        let headerView = headerView
+        let imageView = imageView
+        let nameView = setupNameView()
+        let addressView = setupAddressView()
+        
         headerView.addSubview(imageView)
-        headerView.addSubview(nameLabel)
-        headerView.addSubview(adressLabel)
+        headerView.addSubview(nameView)
+        headerView.addSubview(addressView)
         
         NSLayoutConstraint.activate([
             // ImageView
@@ -178,22 +207,59 @@ final class PoiCalloutView: UIView, MGLCalloutView {
             imageView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
             imageView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             // NameLabel
-            nameLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 8),
-            nameLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 8),
-            nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: headerView.trailingAnchor, constant: -8),
-            nameLabel.bottomAnchor.constraint(equalTo: adressLabel.topAnchor, constant: -16),
+            nameView.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 8),
+            nameView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 8),
+            nameView.trailingAnchor.constraint(lessThanOrEqualTo: headerView.trailingAnchor, constant: -8),
+            nameView.bottomAnchor.constraint(equalTo: adressLabel.topAnchor, constant: -16),
             
             // AdressLabel
-            adressLabel.leadingAnchor.constraint(greaterThanOrEqualTo: headerView.leadingAnchor, constant: 8),
-            adressLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -8),
-            adressLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -8)
+            addressView.leadingAnchor.constraint(greaterThanOrEqualTo: headerView.leadingAnchor, constant: 8),
+            addressView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -8),
+            addressView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -8)
         ])
         
         return headerView
     }
     
-    private func setupDescriptionView() -> UIView {
+    private func setupNameView() -> UIView {
         
-        return descriptionTextView
+        let nameView = nameLabelView
+        let nameLabel = nameLabel
+        
+        nameView.addSubview(nameLabel)
+        
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: nameView.topAnchor, constant: 8),
+            nameLabel.leadingAnchor.constraint(equalTo: nameView.leadingAnchor, constant: 8),
+            nameLabel.bottomAnchor.constraint(equalTo: nameView.bottomAnchor, constant: -8),
+            nameLabel.trailingAnchor.constraint(equalTo: nameView.trailingAnchor, constant: -8),
+        ])
+        
+        return nameView
+    }
+    
+    private func setupAddressView() -> UIView {
+        
+        let addressView = addressLabelView
+        let addressLabel = adressLabel
+        
+        addressView.addSubview(addressLabel)
+        
+        NSLayoutConstraint.activate([
+            addressLabel.topAnchor.constraint(equalTo: addressView.topAnchor, constant: 8),
+            addressLabel.leadingAnchor.constraint(equalTo: addressView.leadingAnchor, constant: 8),
+            addressLabel.bottomAnchor.constraint(equalTo: addressView.bottomAnchor, constant: -8),
+            addressLabel.trailingAnchor.constraint(equalTo: addressView.trailingAnchor, constant: -8),
+        ])
+        
+        return addressView
+    }
+    
+    
+    
+    private func setupDescriptionView() -> UIView {
+        let descriptionView = descriptionTextView
+        
+        return descriptionView
     }
 }
