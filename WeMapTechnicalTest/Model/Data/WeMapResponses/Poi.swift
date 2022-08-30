@@ -22,11 +22,11 @@ final class Poi: NSObject, Decodable, MGLAnnotation {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         self.title = try values.decode(String.self, forKey: .title)
-        poiDescription = try values.decode(String.self, forKey: .poiDescription)
+        poiDescription = try values.decode(String.self, forKey: .poiDescription).fromHtml ?? "No Description"
         let longitude = try values.decode(Double.self, forKey: .longitude)
         let lattitude = try values.decode(Double.self, forKey: .latitude)
         self.coordinate = CLLocationCoordinate2D(latitude: lattitude, longitude: longitude)
-        address = try values.decode(String.self, forKey: .address)
+        address = try values.decode(String.self, forKey: .address).replacingOccurrences(of: ", ", with: ",\n")
         mediaUrl = try? values.decode(URL.self, forKey: .mediaURL)
     }
     
