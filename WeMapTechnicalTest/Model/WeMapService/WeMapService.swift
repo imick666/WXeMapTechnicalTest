@@ -20,8 +20,6 @@ final class WeMapService {
     func fetchPois(for search: String) -> AnyPublisher<[Poi], Error> {
         let baseUrl = URL(string: "https://api.getwemap.com/v3.0/pinpoints/search?list=75426")!
         
-        client.decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
         return client.fetchData(from: baseUrl)
             .map { $0.results }
             .eraseToAnyPublisher()

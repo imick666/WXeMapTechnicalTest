@@ -58,7 +58,7 @@ final class NetworkServiceMock<T: Decodable>: PNetowrkService {
     
     // MARK: - Init
     
-    /// Initialize a new instance of NetworkServiceMocl
+    /// Initialize a new instance of NetworkServiceMock
     init(expectedReponse: ExpectedReponse,
          expectedData: ExpectedData) {
         self.expectedReponse = expectedReponse

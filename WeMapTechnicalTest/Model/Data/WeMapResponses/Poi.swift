@@ -6,28 +6,38 @@
 //
 
 import Foundation
+import Mapbox.MGLAnnotation
 
-struct Poi: Decodable {
+final class Poi: NSObject, Decodable, MGLAnnotation {
+    
+    // MARK: - Properties
+    
+    let title: String?
+    let poiDescription: String
+    let coordinate: CLLocationCoordinate2D
     let address: String
-    let category: Int
-    let country: String?
-    let created, description: String?
-    let externalData, facebookURL, geoEntityShape: String?
-    let id: Int
-    let imageURL: String?
-    let latitude: Double
-    let likeCount: Int
-    let linkURL: String?
-    let longitude: Double
-    let mediaCredits: String
-    let mediaThumbnailURL, mediaType, mediaURL: String?
-    let name: String
-    let openingHours, phone: String?
-    let state, status: Int
-    let tags: [String]
-    let timezone: String?
-    let twitterURL: String?
-    let type: Int
-    let updated: String?
-    let user: Int
+    let mediaUrl: URL?
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.title = try values.decode(String.self, forKey: .title)
+        poiDescription = try values.decode(String.self, forKey: .poiDescription)
+        let longitude = try values.decode(Double.self, forKey: .longitude)
+        let lattitude = try values.decode(Double.self, forKey: .latitude)
+        self.coordinate = CLLocationCoordinate2D(latitude: lattitude, longitude: longitude)
+        address = try values.decode(String.self, forKey: .address)
+        mediaUrl = try? values.decode(URL.self, forKey: .mediaURL)
+    }
+    
+    // MARK: - Enums
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "name"
+        case address
+        case poiDescription = "description"
+        case latitude, longitude
+        case mediaURL = "media_url"
+        
+    }
 }

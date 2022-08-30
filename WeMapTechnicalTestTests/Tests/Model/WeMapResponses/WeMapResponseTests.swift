@@ -11,11 +11,9 @@ import XCTest
 class WeMapResponseTests: XCTestCase {
     
     func testDecodeJson() {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         do {
-            let _ = try decoder.decode(WeMapResponse.self, from: FakeData<WeMapResponse>.goodData)
+            let _ = try JSONDecoder().decode(WeMapResponse.self, from: FakeData<WeMapResponse>.goodData)
             XCTAssert(true)
         } catch {
             XCTFail(error.localizedDescription)

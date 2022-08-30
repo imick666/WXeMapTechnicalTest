@@ -78,9 +78,11 @@ struct MapView: UIViewRepresentable {
         }
         
         func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
-            let view = PoiCalloutView(annotation: annotation)
+            if let annotation = annotation as? Poi {
+                return PoiCalloutView(annotation: annotation)
+            }
             
-            return view
+            return nil
         }
         
     }

@@ -7,6 +7,7 @@
 
 import Mapbox
 import UIKit
+import SDWebImage
 
 final class PoiCalloutView: UIView, MGLCalloutView {
     
@@ -33,8 +34,13 @@ final class PoiCalloutView: UIView, MGLCalloutView {
     
     // MARK: - Init
     
-    init(annotation: MGLAnnotation) {
+    init(annotation: Poi) {
         self.representedObject = annotation
+        nameLabel.text = annotation.title
+        descriptionTextView.text = annotation.poiDescription
+        adressLabel.text = annotation.address
+        
+        imageView.sd_setImage(with: annotation.mediaUrl, placeholderImage: UIImage(named: "placeholder"))
         
         super.init(frame: .zero)
     }
@@ -66,6 +72,18 @@ final class PoiCalloutView: UIView, MGLCalloutView {
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.backgroundColor = .white
+        
+        return view
+    }()
+    
+    private var imageView: UIImageView = {
+       let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
         return view
     }()
@@ -148,14 +166,17 @@ final class PoiCalloutView: UIView, MGLCalloutView {
     // MARK: - Subviews Setup
     
     private func setupHeader() -> UIView {
-        headerView.layer.contents = UIImage(named: "placeholder")!.cgImage
-        nameLabel.text = "Ma gare SNCF - TAM XXXXXXXXXXXXXXXXXXX"
-        adressLabel.text = "42, impasse galillée\n34070, Montpellier\nFrance"
         
+        headerView.addSubview(imageView)
         headerView.addSubview(nameLabel)
         headerView.addSubview(adressLabel)
         
         NSLayoutConstraint.activate([
+            // ImageView
+            imageView.topAnchor.constraint(equalTo: headerView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
+            imageView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             // NameLabel
             nameLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 8),
@@ -172,7 +193,6 @@ final class PoiCalloutView: UIView, MGLCalloutView {
     }
     
     private func setupDescriptionView() -> UIView {
-        descriptionTextView.text = "Rue Jules Ferry, devant la gare\n\nRue Pagézy et Rue Levat :\n\n * Ligne 6 (Pas de Loup - Euromédecine)\n * Ligne 7 (Hôtel du département - La Martelle / Les Bouisses)\n * Ligne 8 (Cité de l'Arme - Gare Saint-Roch)\n * Ligne 11 (Garcia Lorca - Gare Saint-Roch)\n * Ligne 12 (Catalpas - Gare Saint-Roch)"
         
         return descriptionTextView
     }

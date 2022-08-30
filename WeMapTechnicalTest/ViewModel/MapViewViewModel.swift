@@ -14,7 +14,7 @@ final class MapViewViewModel: ObservableObject {
     
     // MARK: - Properties
     
-    @Published private(set) var annotations = [MGLPointAnnotation]()
+    @Published private(set) var annotations = [MGLAnnotation]()
     
     // MARK: - Init
     
@@ -39,15 +39,7 @@ final class MapViewViewModel: ObservableObject {
     }
     
     func setPois(_ pois: [Poi]) {
-        let annotations = pois.map { poi -> MGLPointAnnotation in
-            let annotation = MGLPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: poi.latitude, longitude: poi.longitude)
-            annotation.title = poi.name
-            
-            return annotation
-        }
-        
-        self.annotations = annotations
+        annotations = pois
     }
     
 }

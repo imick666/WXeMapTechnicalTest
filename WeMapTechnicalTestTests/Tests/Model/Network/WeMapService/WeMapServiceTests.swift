@@ -53,7 +53,8 @@ class WeMapServiceTests: XCTestCase {
                 }
                 expectation.fulfill()
             }, receiveValue: { result in
-                XCTAssertEqual(result[0].name, "Bus urbains - TAM")
+                XCTAssertEqual(result[0].title, "Bus urbains - TAM")
+                XCTAssertEqual(result[0].mediaUrl, URL(string: "https://busUrbainTam.fr"))
             })
             .store(in: &subscriptions!)
         
