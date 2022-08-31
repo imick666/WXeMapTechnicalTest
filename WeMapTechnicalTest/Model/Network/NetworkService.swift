@@ -15,4 +15,3 @@ final class NetworkService: PNetowrkService {
             .eraseToAnyPublisher()
     }
 }
-

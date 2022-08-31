@@ -8,20 +8,24 @@
 import SwiftUI
 import Mapbox.MGLPointAnnotation
 
+//  swiftlint:disable line_length
 struct ContentView: View {
-    
+
+    // MARK: - Properties
+
     @ObservedObject var viewModel: ContentViewViewModel
     @State private var showAlert = false
-    
+
+    // MARK: - Body
+
     var body: some View {
         ZStack {
             MapView(viewModel: viewModel.mapViewViewModel)
                 .edgesIgnoringSafeArea(.bottom)
-                
-            
+
             VStack {
                 Spacer()
-                
+
                 TextField("Search", text: $viewModel.searchTerms)
                     .padding()
                     .background(.white)
@@ -46,6 +50,8 @@ struct ContentView: View {
         })
     }
 }
+
+// MARK: - Preview
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

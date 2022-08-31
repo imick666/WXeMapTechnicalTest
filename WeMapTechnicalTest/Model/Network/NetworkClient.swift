@@ -9,20 +9,20 @@ import Foundation
 import Combine
 
 final class NetworkClient<T: Decodable> {
-    
+
     // MARK: - Properties
-    
+
     private var service: PNetowrkService
     var decoder = JSONDecoder()
-    
+
     // MARK: - Init
-    
+
     init(service: PNetowrkService = NetworkService()) {
         self.service = service
     }
-    
+
     // MARK: - Methodes
-    
+
     func fetchData(from url: URL) -> AnyPublisher<T, Error> {
         service.fetchData(from: url)
             .tryMap { data, response in

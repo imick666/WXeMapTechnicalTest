@@ -10,5 +10,4 @@ import Combine
 
 protocol PNetowrkService {
     func fetchData(from url: URL) -> AnyPublisher<(data: Data, response: URLResponse), URLError>
-    
 }

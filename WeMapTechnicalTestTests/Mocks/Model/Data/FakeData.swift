@@ -17,13 +17,14 @@ import Foundation
 ///         MyFakeData.json
 ///         MyFakeData.swift
 final class FakeData<T: Decodable> {
-    
+
+    //  swiftlint:disable force_try
     static var goodData: Data {
         let bundle = Bundle(for: FakeData.self)
         let url = bundle.url(forResource: "\(T.self)", withExtension: "json")!
         return try! Data(contentsOf: url)
     }
-    
+
     static var badData: Data {
         return "Bonjour".data(using: .utf8)!
     }

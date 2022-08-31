@@ -13,17 +13,18 @@ import Combine
 /// send the responses and the datas you want to test.
 ///
 /// The decodable generic T will determine the fake data to use.
+// swiftlint:disable line_length
 final class NetworkServiceMock<T: Decodable>: PNetowrkService {
-    
+
     // MARK: - Enums
-    
+
     /// The expected response to test.
     ///
     enum ExpectedReponse {
         /// Good
         case good
         case bad(expectedError: WMNetworkError)
-        
+
         var URLResponse: HTTPURLResponse {
             let url = URL(string: "google.fr")!
             switch self {
@@ -38,11 +39,11 @@ final class NetworkServiceMock<T: Decodable>: PNetowrkService {
             }
         }
     }
-    
+
     /// The expected data to test.
     enum ExpectedData {
         case good, bad
-        
+
         var data: Data {
             switch self {
             case .good: return FakeData<T>.goodData
@@ -50,23 +51,23 @@ final class NetworkServiceMock<T: Decodable>: PNetowrkService {
             }
         }
     }
-    
+
     // MARK: - Properties
-    
+
     private var expectedReponse: ExpectedReponse
     private var expectedData: ExpectedData
-    
+
     // MARK: - Init
-    
+
     /// Initialize a new instance of NetworkServiceMock
     init(expectedReponse: ExpectedReponse,
          expectedData: ExpectedData) {
         self.expectedReponse = expectedReponse
         self.expectedData = expectedData
     }
-    
+
     // MARK: - Methodes
-    
+
     /// Conformence to PNetworkService protocol.
     ///
     /// The URL can be empty, it will not be used.

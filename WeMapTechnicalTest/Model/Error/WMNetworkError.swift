@@ -8,6 +8,9 @@
 import Foundation
 
 enum WMNetworkError: Error, Equatable {
+
+    // MARK: - Case
+
     case notAuthentified
     case accessDenied
     case ressourceNotFound
@@ -15,10 +18,12 @@ enum WMNetworkError: Error, Equatable {
     case noResponse
     case uknowned
     case other(error: URLError)
-    
+
+    // MARK: - Init
+
     init?(response: HTTPURLResponse) {
         switch response.statusCode {
-        case 200 ..< 300 : return nil
+        case 200 ..< 300: return nil
         case 401: self = .notAuthentified
         case 403: self = .accessDenied
         case 404: self = .ressourceNotFound
@@ -27,7 +32,7 @@ enum WMNetworkError: Error, Equatable {
         default: self = .uknowned
         }
     }
-    
+
     init(error: URLError) {
         switch error.code {
         case .fileDoesNotExist: self = .ressourceNotFound

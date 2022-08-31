@@ -10,5 +10,3 @@ import Foundation
 struct WeMapResponse: Decodable {
     let results: [Poi]
 }
-
-

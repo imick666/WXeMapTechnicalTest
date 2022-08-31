@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//  swiftlint:disable line_length
 extension String {
     var fromHtml: String? {
         let breaked = self.replacingOccurrences(of: "\n", with: "</br>")
@@ -20,7 +21,7 @@ extension String {
         else {
             return nil
         }
-        
+
         return attributesString.string
     }
 }

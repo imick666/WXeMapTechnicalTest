@@ -10,23 +10,23 @@ import Combine
 import CoreLocation
 
 final class ContentViewViewModel: ObservableObject {
-    
+
     // MARK: - Properties
-    
+
     @Published var mapViewViewModel = MapViewViewModel()
     @Published var searchTerms = ""
-    
+
     private var weMapService: WeMapService
     private var subscribtions = Set<AnyCancellable>()
-    
+
     // MARK: - Init
-    
+
     init(weMapService: WeMapService = WeMapService()) {
         self.weMapService = weMapService
     }
-    
+
     // MARK: - Methodes
-    
+
     func fetchPoi() {
         weMapService.fetchPois(for: searchTerms)
             .sink { completion in
@@ -39,6 +39,4 @@ final class ContentViewViewModel: ObservableObject {
             }
             .store(in: &subscribtions)
     }
-    
-    
 }
