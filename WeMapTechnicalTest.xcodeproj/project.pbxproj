@@ -27,6 +27,8 @@
 		E0679E0228ACF50200D56296 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E0679E0128ACF50200D56296 /* SDWebImageSwiftUI */; };
 		E0679E0428ACF5CF00D56296 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679E0328ACF5CF00D56296 /* MapView.swift */; };
 		E0679E0628ACF67400D56296 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0679E0528ACF67400D56296 /* Credential.swift */; };
+		E0E3CBBB28BF6B780080C51F /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3CBBA28BF6B780080C51F /* PreviewViewModel.swift */; };
+		E0E3CBBF28BF6C8D0080C51F /* PreviewNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3CBBE28BF6C8D0080C51F /* PreviewNetworkService.swift */; };
 		E0FF056928AE6CCB0085FCBC /* WeMapReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF056828AE6CCB0085FCBC /* WeMapReponse.swift */; };
 		E0FF057128AE6ED10085FCBC /* WeMapResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF057028AE6ED10085FCBC /* WeMapResponseTests.swift */; };
 		E0FF057428AE76210085FCBC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF057328AE76210085FCBC /* NetworkService.swift */; };
@@ -69,6 +71,9 @@
 		E0679DFB28ACF37500D56296 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E0679E0328ACF5CF00D56296 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E0679E0528ACF67400D56296 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		E0E3CBBA28BF6B780080C51F /* PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
+		E0E3CBBE28BF6C8D0080C51F /* PreviewNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNetworkService.swift; sourceTree = "<group>"; };
+		E0E3CBC028BF6CCF0080C51F /* WeMapResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeMapResponse.json; sourceTree = "<group>"; };
 		E0FF056828AE6CCB0085FCBC /* WeMapReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapReponse.swift; sourceTree = "<group>"; };
 		E0FF057028AE6ED10085FCBC /* WeMapResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMapResponseTests.swift; sourceTree = "<group>"; };
 		E0FF057328AE76210085FCBC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -189,6 +194,8 @@
 		E0679DCF28ACF18B00D56296 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				E0E3CBBC28BF6C440080C51F /* Model */,
+				E0E3CBB928BF6B5E0080C51F /* ViewModel */,
 				E0679DD028ACF18B00D56296 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -241,6 +248,31 @@
 				E010E51A28B10F2B00E16DF8 /* MapViewViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0E3CBB928BF6B5E0080C51F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0E3CBBA28BF6B780080C51F /* PreviewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0E3CBBC28BF6C440080C51F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0E3CBBD28BF6C510080C51F /* Network */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E0E3CBBD28BF6C510080C51F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E0E3CBC028BF6CCF0080C51F /* WeMapResponse.json */,
+				E0E3CBBE28BF6C8D0080C51F /* PreviewNetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		E0FF056728AE6CAC0085FCBC /* WeMapResponses */ = {
@@ -459,10 +491,12 @@
 				E0FF057428AE76210085FCBC /* NetworkService.swift in Sources */,
 				E0FF058728AE93B50085FCBC /* WMNetworkError.swift in Sources */,
 				E0FF056928AE6CCB0085FCBC /* WeMapReponse.swift in Sources */,
+				E0E3CBBF28BF6C8D0080C51F /* PreviewNetworkService.swift in Sources */,
 				E0FF057D28AE7E6A0085FCBC /* PNetworkService.swift in Sources */,
 				E010E51D28B1131B00E16DF8 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				E01615E028B15F7800510EF0 /* Sequence+MGLAnnotation.swift in Sources */,
 				E016984828BD8F9100E41B8E /* String.swift in Sources */,
+				E0E3CBBB28BF6B780080C51F /* PreviewViewModel.swift in Sources */,
 				E010E51428AFC93200E16DF8 /* ContentViewViewModel.swift in Sources */,
 				E016984428B9504900E41B8E /* PoiCalloutView.swift in Sources */,
 			);

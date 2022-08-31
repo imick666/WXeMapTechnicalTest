@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct WeMapTechnicalTestApp: App {
+    
+    let contentViewViewModel = ContentViewViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: contentViewViewModel)
         }
     }
 }

@@ -41,6 +41,7 @@ struct MapView: UIViewRepresentable {
     // MARK: - Methodes
     
     private func annotationHasChanged(for mapView: MGLMapView) -> Bool {
+        guard !viewModel.annotations.isEmpty else { return false }
         switch mapView.annotations {
         case .none: return true
         case .some(let annotations): return annotations != viewModel.annotations
@@ -84,6 +85,5 @@ struct MapView: UIViewRepresentable {
             
             return nil
         }
-        
     }
 }
