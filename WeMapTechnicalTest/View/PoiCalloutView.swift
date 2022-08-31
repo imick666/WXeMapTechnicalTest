@@ -19,7 +19,7 @@ final class PoiCalloutView: UIView, MGLCalloutView {
         }
         set {
             var value = newValue
-            value.y -= bounds.midY
+            value.y -= bounds.midY + 15
             super.center = value
         }
     }
@@ -152,7 +152,7 @@ final class PoiCalloutView: UIView, MGLCalloutView {
         let height = mainStackView.systemLayoutSizeFitting(.zero).height
         let xPoint = rect.midX - (width / 2)
         let yPoint = rect.minY - height
-        self.frame = CGRect(x: xPoint, y: yPoint, width: width, height: height)
+        self.frame = CGRect(x: xPoint, y: yPoint + 15, width: width, height: height)
 
         self.addSubview(mainStackView)
 

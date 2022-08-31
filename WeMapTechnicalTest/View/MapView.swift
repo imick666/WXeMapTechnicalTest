@@ -58,8 +58,7 @@ struct MapView: UIViewRepresentable {
                                   acrossDistance: viewModel.annotations.maxDistance,
                                   pitch: 0,
                                   heading: 0)
-        mapView.setCamera(camera, withDuration: 2, animationTimingFunction: nil)
-
+        mapView.setCamera(camera, withDuration: 2, animationTimingFunction: CAMediaTimingFunction(name: .easeInEaseOut))
     }
 
     // MARK: - Coordinator
@@ -88,6 +87,18 @@ struct MapView: UIViewRepresentable {
             }
 
             return nil
+        }
+
+        func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+            let camera = MGLMapCamera(lookingAtCenter: annotation.coordinate, acrossDistance: 100, pitch: 0, heading: 0)
+            mapView.setCamera(camera, withDuration: 0.5, animationTimingFunction: CAMediaTimingFunction(name: .easeIn), edgePadding: UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0))
+        }
+
+        func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+            let center = control.viewModel.annotations.centerCoordinate
+            let distance = control.viewModel.annotations.maxDistance
+            let camera = MGLMapCamera(lookingAtCenter: center, acrossDistance: distance, pitch: 0, heading: 0)
+            mapView.setCamera(camera, withDuration: 0.5, animationTimingFunction: CAMediaTimingFunction(name: .easeOut))
         }
     }
 }
